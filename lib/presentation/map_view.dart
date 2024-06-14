@@ -19,7 +19,6 @@ class _MapViewState extends State<MapView> {
   LatLng currentPoint = LatLng(16.871311, 96.199379);
   Timer? _timer;
   int currentSpeedSecond = 300;
-  int currentIndex = 0;
   Duration _currentDuration = Duration(milliseconds: 300);
   List<LatLng> routePoints = [];
   bool isOnPath = true;
@@ -38,7 +37,7 @@ class _MapViewState extends State<MapView> {
   void _calculateEndPoint() {
     final Distance distance = Distance();
     final double desiredDistance = 2000; // 7 km
-    final List<double> bearingList = [45,90,135,180,225,270,315]; // Ea
+    final List<double> bearingList = [45,90,135,225,270,315]; // Ea
     final double bearing = bearingList[Random().nextInt(bearingList.length)];
     endPoint = distance.offset(startPoint, desiredDistance, bearing);
   }

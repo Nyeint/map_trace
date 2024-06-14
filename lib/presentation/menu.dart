@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:map_trace/route/my_route.dart';
 
-import '../route/route_path.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class MenuScreen extends StatelessWidget {
+  const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +25,12 @@ class SplashScreen extends StatelessWidget {
                 context.pushNamed(RouteName.graph_view);
               },
               child: const Text('Graph View'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                context.pushNamed(RouteName.google_map_view);
+              },
+              child: const Text('Google Map View'),
             ),
           ],
         ),
